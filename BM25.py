@@ -43,7 +43,7 @@ INVERTED_IDX_V2 = get_inverted_idx_v2(INVERTED_IDX)
 
 # break query into tokens
 def tokenize(str):
-    stemmer = PorterStemmer()
+    # stemmer = PorterStemmer()
     tokens = []
     str = str.lower()
     start = 0
@@ -54,8 +54,8 @@ def tokenize(str):
             start = cur + 1
         if str[cur].isalnum() and cur == len(str) - 1:
             tokens.append(str[start:cur + 1])
-    return [stemmer.stem(token) for token in tokens]
-    # return tokens
+    # return [stemmer.stem(token) for token in tokens]
+    return tokens
 
     
 def convert_to_token_ids(tokens):
